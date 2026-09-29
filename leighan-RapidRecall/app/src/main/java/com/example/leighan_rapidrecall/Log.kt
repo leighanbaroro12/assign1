@@ -1,0 +1,46 @@
+package com.example.leighan_rapidrecall
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import java.util.Date
+
+class Log (
+    val genSeq: Sequence,
+    val userSeq: Sequence,
+    val result: Boolean,
+    val timeStamp: Date
+)
+
+@Composable
+fun LogRow(
+    log: Log,
+){
+    val logBoxColor = Color(13,51,93)
+
+    Box(
+        modifier = Modifier
+            .background(color = logBoxColor,
+                shape = RoundedCornerShape(10.dp))
+            .padding(all = 16.dp),
+    ) {
+        Text(
+            text = """
+            Generated Sequence: ${log.genSeq.sequence}
+            User Sequence:  ${log.userSeq.sequence}
+            Result:  ${log.result}
+            Time Stamp: ${log.timeStamp}
+            """,
+            fontSize = 15.sp,
+            color = Color.White
+        )
+    }
+}
