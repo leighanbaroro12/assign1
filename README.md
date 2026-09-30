@@ -1,4 +1,8 @@
 # CMPUT 301: Assignment 0
+- I had to make an app called "Rapid Recall." The user inputs the sequence length they want from 1-10, and it then flashes on the screen
+  that amount of random digits, the user then has to guess the random sequence. It gives back results immediately- saying if they got the
+  sequence correct overall, and shows the individual digits on the screen in a vertical list as boxes- green box for the digit they got
+  right and red if wrong. This app also has a log records screen and a summary screen, and total games played functionality in home screen
 
 ## Student Details
 - **Full Name:** `Leighan Baroro`
