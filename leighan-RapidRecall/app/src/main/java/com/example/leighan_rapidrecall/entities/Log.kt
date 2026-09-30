@@ -40,7 +40,7 @@ fun LogRow(
             User Sequence:  
             ${log.userSeq.sequence}
             
-            Result:  
+            Correct Sequence?:  
             ${log.result}
             
             Time Stamp: 
