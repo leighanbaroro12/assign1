@@ -1,0 +1,14 @@
+These are some problems I've faced whilst doing assignment 1
+I've also listed the solutions and how I overcame it
+
+Overall Game Play:
+- Problem- At first I tried to do one big composable function for the game play, but then I started mixing the UI with too much logic
+- Solution- I split it up into 3 categories: GamePlayState, GamePlayController, then the GamePlayScreen. So I made an entity, controller and a 'boundary' (Composable) object
+
+Game Play State Object:
+- Problem- I made an object of this inside the GamePlayScreen, so it was mutable, however, I noticed the composable only tracks the overall object not the contents within it
+- Solution- I had to explicitly make the variables  "by mutableStateOf" or something similar because that notifies the composable if it actually changes
+
+Changing Screens:
+- Problem- I had multiple screen I had to change to, and it was getting harder to track to which screen appears or not
+- Solution- I should've probably made a ScreenController class and then change it from there, BUT I just simply used a currentScreen variable within the compose and then a "when" to change screens
