@@ -1,4 +1,3 @@
-
 package com.example.leighan_rapidrecall
 
 import androidx.compose.foundation.background
@@ -41,36 +40,37 @@ fun SummaryScreen (
         Button(
             onClick = { onExit(0) },
             shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = themeColor.LIGHT_BLUE),
+            colors = ButtonDefaults.buttonColors(containerColor = themeColor.DARK_BLUE),
             modifier = Modifier.padding(10.dp)// make it a box in top left corner btw
         ) {
             Text(
                 text = "HOME",
-                fontSize = 15.sp
+                fontSize = 20.sp
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
 
         Text(
             text = "SUMMARY",
             fontSize = 45.sp,
             color = themeColor.DARK_BLUE,
+            modifier = Modifier.padding(35.dp)
         )
-        Spacer(modifier = Modifier.height(75.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Box(
             modifier = Modifier
                 .padding(10.dp)
                 .background(color = themeColor.DARK_BLUE,
                     shape = RoundedCornerShape(10.dp)),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = """
                TOTAL ATTEMPTS:    ${summaryObj.totalAttempts}
-               
+          
                CORRECT ATTEMPTS:    ${summaryObj.correctAttempts}
                
-               ACCURACY:    ${summaryObj.accuracy}
+               ACCURACY ( % ):    ${summaryObj.accuracy}
                """,
                 fontSize = 15.sp,
                 color = Color.White,

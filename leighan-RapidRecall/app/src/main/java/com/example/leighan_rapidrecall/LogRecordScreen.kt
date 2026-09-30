@@ -40,36 +40,33 @@ fun LogRecordScreen (
         modifier = Modifier
             .fillMaxSize()
             .background(color = themeColor.LIGHT_BIEGE)
-            .padding(top = 50.dp, start = 20.dp, end = 20.dp, bottom = 35.dp),
+            .padding(top = 100.dp, start = 20.dp, end = 20.dp, bottom = 35.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
 
         Button(
             onClick = { onExit(0) },
             shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = themeColor.LIGHT_BLUE),
-            modifier = Modifier.padding(10.dp)// make it a box in top left corner btw
+            colors = ButtonDefaults.buttonColors(containerColor = themeColor.DARK_BLUE),
+            modifier = Modifier.padding(10.dp)
         ) {
             Text(
                 text = "HOME",
-                fontSize = 15.sp
+                fontSize = 20.sp
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
 
         Text (
             text = "LOG RECORDS",
-            fontSize = 30.sp,
+            fontSize = 45.sp,
             color = themeColor.DARK_BLUE,
-            modifier = Modifier.padding(25.dp)
+            modifier = Modifier.padding(35.dp)
         )
-        Spacer(modifier = Modifier.height(75.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         LazyColumn() {
-            // make sure its not null list yet
             items(logs){ log ->
-                LogRow(log)
+                LogRow(log, themeColor)
                 Spacer(modifier = Modifier.height(16.dp))
             }
         }

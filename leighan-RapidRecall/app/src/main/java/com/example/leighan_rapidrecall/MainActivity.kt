@@ -22,15 +22,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val userSeq1 = Sequence(mutableListOf(1,2,3), 3)
-        val genSeq1 = Sequence(mutableListOf(1,2,3), 3)
-        val log1: Log = Log(genSeq1, userSeq1, false, Date(System.currentTimeMillis()))
-        val log2: Log = Log(genSeq1, userSeq1, false, Date(System.currentTimeMillis()))
-        val log3: Log = Log(genSeq1, userSeq1, false, Date(System.currentTimeMillis()))
-        val log4: Log = Log(genSeq1, userSeq1, false, Date(System.currentTimeMillis()))
-        val log5: Log = Log(genSeq1, userSeq1, false, Date(System.currentTimeMillis()))
-
-        val logs = mutableListOf<Log>(log1,log2,log3,log4,log5)
+        val logs = mutableListOf<Log>()
         val themeColor = Colors()
         setContent {
             LeighanRapidRecallTheme {

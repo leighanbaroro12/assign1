@@ -23,23 +23,30 @@ class Log (
 @Composable
 fun LogRow(
     log: Log,
+    themeColors: Colors
 ){
-    val logBoxColor = Color(13,51,93)
 
     Box(
         modifier = Modifier
-            .background(color = logBoxColor,
+            .background(color = themeColors.DARK_BLUE,
                 shape = RoundedCornerShape(10.dp))
             .padding(all = 16.dp),
     ) {
         Text(
             text = """
-            Generated Sequence: ${log.genSeq.sequence}
-            User Sequence:  ${log.userSeq.sequence}
-            Result:  ${log.result}
-            Time Stamp: ${log.timeStamp}
+            Generated Sequence: 
+            ${log.genSeq.sequence}
+            
+            User Sequence:  
+            ${log.userSeq.sequence}
+            
+            Result:  
+            ${log.result}
+            
+            Time Stamp: 
+            ${log.timeStamp}
             """,
-            fontSize = 15.sp,
+            fontSize = 16.sp,
             color = Color.White
         )
     }

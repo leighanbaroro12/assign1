@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -24,7 +25,6 @@ import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.milliseconds
 
 class Sequence(
-    // gave both a default/inital value
     // Sequence is a list of ints so it's easier to loop through each digit
     val sequence: MutableList<Int> = mutableListOf(),
     val seqLen: Int = 0
@@ -38,23 +38,21 @@ fun ShowDigit (
     Box(
         modifier = Modifier
             .padding(16.dp)
-            .background(color = color)
-            .width(65.dp)
-            .height(65.dp),
+            .background(color = color, shape = RoundedCornerShape(10.dp))
+            .width(140.dp)
+            .height(140.dp),
         contentAlignment = Alignment.Center
     ){
         Text(
             text = "$digit",
-            fontSize = 20.sp,
+            fontSize = 45.sp,
             color = Color.White
         )
     }
 }
 
-// TEST OUT THE FLASH DIGIT BTW
-// TO SEE IF ITLL WORK OUT
 @Composable
-fun FlashDigit(
+fun FlashSequence(
     seqLen: Int,
     digits: MutableList<Int>,
     themeColor : Colors,
@@ -64,11 +62,16 @@ fun FlashDigit(
     val twoColors = listOf(themeColor.DARK_BLUE, themeColor.LIGHT_BLUE)
     var alternateColorIndex by remember { mutableIntStateOf(0) }
 
-    if (digitIndex < seqLen - 1) ShowDigit(digits[digitIndex], twoColors[alternateColorIndex])
+    if (digitIndex < seqLen ) {
+        ShowDigit(
+            digits[digitIndex],
+            twoColors[alternateColorIndex]
+        )
+    }
 
     LaunchedEffect(digitIndex) {
-        delay(2500.milliseconds)
-        if (digitIndex < seqLen - 1 ) {
+        delay(1000.milliseconds)
+        if (digitIndex < seqLen ) {
             alternateColorIndex = (digitIndex+1) % 2
             digitIndex++
         }
@@ -76,5 +79,4 @@ fun FlashDigit(
             gamePlayState.currentScreen = 2
         }
     }
-
 }
