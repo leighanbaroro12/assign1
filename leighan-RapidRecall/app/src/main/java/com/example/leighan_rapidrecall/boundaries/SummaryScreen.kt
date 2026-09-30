@@ -1,4 +1,4 @@
-package com.example.leighan_rapidrecall
+package com.example.leighan_rapidrecall.boundaries
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
+import com.example.leighan_rapidrecall.ui.theme.Colors
 import com.example.leighan_rapidrecall.entities.Summary
 
 @Composable

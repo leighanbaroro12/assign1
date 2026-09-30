@@ -1,4 +1,4 @@
-package com.example.leighan_rapidrecall
+package com.example.leighan_rapidrecall.boundaries
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.Alignment
+import com.example.leighan_rapidrecall.ui.theme.Colors
 import com.example.leighan_rapidrecall.entities.Log
 import com.example.leighan_rapidrecall.entities.LogRow
 
